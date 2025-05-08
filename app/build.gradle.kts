@@ -1,17 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    // 기존의 andorid.application이 아니라 build-logic에 플러그인 관련 작업이 되어 있는 toml 내에 plugin 별칭으로 설정한 project.android.application이라는 커스텀 플러그인 적용
+    // 물론 project.android.application이라는 커스텀 플러그인 관련 buil-logic 내의 관련 동작에는 android.application을 추가하는 작업이 되어 있음
+    alias(libs.plugins.project.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.hangeulmansae.featurebasedmultimodule"
-    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.hangeulmansae.featurebasedmultimodule"
-        minSdk = 25
-        targetSdk = 35
+
         versionCode = 1
         versionName = "1.0"
 
@@ -27,10 +27,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
+
     kotlinOptions {
         jvmTarget = "11"
     }

@@ -1,4 +1,4 @@
-package com.hangeulmansae.featurebasedmultimodule.ui.theme
+package com.na2te.featurebasedmultimodule.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

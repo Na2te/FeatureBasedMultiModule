@@ -12,6 +12,14 @@ kotlin {
     }
 }
 
+dependencies {
+    // ApplicationExtension 등 Android 앱과 라이브러리의 Gradle에 접근하기 위한 plugin
+    compileOnly(libs.android.gradlePlugin)
+    compileOnly(libs.kotlin.gradlePlugin)
+
+    compileOnly(libs.android.tools.common)
+}
+
 // Gradle 빌드 스크립트에서 특정 작업을 구성하거나 새로운 작업을 정의할 때 사용되는 블록
 tasks {
     // validatePlugins의 작업에 추가적으로 설정
@@ -23,3 +31,12 @@ tasks {
     }
 }
 
+gradlePlugin {
+    plugins {
+        register("androidApplication") {
+            // 간혹 Now In Android에서는 .asProvider().get으로 불러오는 경우도 있던데 도대체 무슨 차이인지 모르겠음
+            id = libs.plugins.project.android.application.get().pluginId
+            implementationClass = "com.hangeulmansae.convention.plugins.AndroidApplicationConventionPlugin"
+        }
+    }
+}

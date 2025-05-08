@@ -1,4 +1,4 @@
-package com.hangeulmansae.featurebasedmultimodule.ui.theme
+package com.na2te.featurebasedmultimodule.ui.theme
 
 import android.app.Activity
 import android.os.Build

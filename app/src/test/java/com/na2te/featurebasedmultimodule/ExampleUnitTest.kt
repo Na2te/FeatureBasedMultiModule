@@ -1,4 +1,4 @@
-package com.hangeulmansae.featurebasedmultimodule
+package com.na2te.featurebasedmultimodule
 
 import org.junit.Test
 
