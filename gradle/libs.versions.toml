@@ -32,11 +32,13 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 # build-logic에 필요한 것들
 # Android 앱 빌드 시스템을 Gradle과 통합해주는 플러그인
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
-
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 
 # kotlin 언어를 Gradle 기반 프로젝트에서 사용할 수 있게 해주는 플러그인
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+# build-logic의 ComposeCompiler 관련 옵션을 설정하기 위한 라이브러리
+compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

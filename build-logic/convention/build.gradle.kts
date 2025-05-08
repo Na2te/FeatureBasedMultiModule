@@ -18,6 +18,8 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
 
     compileOnly(libs.android.tools.common)
+
+    compileOnly(libs.compose.gradlePlugin)
 }
 
 // Gradle 빌드 스크립트에서 특정 작업을 구성하거나 새로운 작업을 정의할 때 사용되는 블록
