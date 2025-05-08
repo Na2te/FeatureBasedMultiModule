@@ -36,7 +36,7 @@ gradlePlugin {
         register("androidApplication") {
             // 간혹 Now In Android에서는 .asProvider().get으로 불러오는 경우도 있던데 도대체 무슨 차이인지 모르겠음
             id = libs.plugins.project.android.application.get().pluginId
-            implementationClass = "com.hangeulmansae.convention.plugins.AndroidApplicationConventionPlugin"
+            implementationClass = "com.na2te.convention.plugins.AndroidApplicationConventionPlugin"
         }
     }
 }
