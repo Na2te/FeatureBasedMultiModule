@@ -1,7 +1,6 @@
 plugins {
-    id("java-library")
+    // Gradle 플러그인, 빌드 스크립트를 Kotlin 언어로 작성할 수 있게 제공하는 Gradle 플러그인
     `kotlin-dsl`
-    alias(libs.plugins.jetbrains.kotlin.jvm)
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_11
