@@ -38,5 +38,10 @@ gradlePlugin {
             id = libs.plugins.project.android.application.get().pluginId
             implementationClass = "com.na2te.convention.plugins.AndroidApplicationConventionPlugin"
         }
+
+        register("androidCompose"){
+            id = libs.plugins.project.android.compose.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.AndroidComposeConventionPlugin"
+        }
     }
 }
