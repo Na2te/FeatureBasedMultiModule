@@ -37,6 +37,15 @@ gradlePlugin {
     plugins {
         register("androidApplication") {
             // 간혹 Now In Android에서는 .asProvider().get으로 불러오는 경우도 있던데 도대체 무슨 차이인지 모르겠음
+            /*
+            만약 ~~.x 플러그인이 있는데, ~~.x.x 같은 보기에 형제가 아니라 자식 같은 플러그인이 있을 때 그냥 .get()으로 하면
+            Unresolved reference. None of the following candidates is applicable because of receiver type mismatch
+            이런 에러가 뜨는 듯
+            이 때 .asProvider().get() 하면 에러 없이 잘 된다
+            register로 자식 관계처럼 보이는 플러그인을 등록하고 말고의 여부랑 상관없이 그냥 toml 파일에 그런 관계가 있는지로 결정되는 듯
+            부모를 .asProvider()~로 부르면
+            자식은 그냥 .get()으로 불러도 별 문제가 없는 것 확인
+            */
             id = libs.plugins.project.android.application.get().pluginId
             implementationClass = "com.na2te.convention.plugins.AndroidApplicationConventionPlugin"
         }
@@ -52,13 +61,19 @@ gradlePlugin {
         }
 
         register("androidLibrary"){
-            id = libs.plugins.project.android.library.get().pluginId
+            id = libs.plugins.project.android.library.asProvider().get().pluginId
             implementationClass = "com.na2te.convention.plugins.AndroidLibraryConventionPlugin"
+        }
+
+        register("androidLibraryCompose"){
+            id = libs.plugins.project.android.library.compose.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.AndroidLibraryComposeConventionPlugin"
         }
 
         register("hilt"){
             id = libs.plugins.project.hilt.get().pluginId
             implementationClass = "com.na2te.convention.plugins.HiltConventionPlugin"
         }
+
     }
 }

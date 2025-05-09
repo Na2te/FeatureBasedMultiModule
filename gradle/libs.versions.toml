@@ -47,6 +47,7 @@ compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -57,4 +58,5 @@ project-android-application = { id = "project.android.application" }
 project-android-compose = { id = "project.android.compose" }
 project-android-feature = { id = "project.android.feature" }
 project-android-library = { id = "project.android.library" }
+project-android-library-compose = { id = "project.android.library.compose" }
 project-hilt = { id = "project.hilt" }
