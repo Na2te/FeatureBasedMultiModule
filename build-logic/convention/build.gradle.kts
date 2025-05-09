@@ -45,5 +45,20 @@ gradlePlugin {
             id = libs.plugins.project.android.compose.get().pluginId
             implementationClass = "com.na2te.convention.plugins.AndroidComposeConventionPlugin"
         }
+
+        register("androidFeature"){
+            id = libs.plugins.project.android.feature.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.AndroidFeatureConventionPlugin"
+        }
+
+        register("androidLibrary"){
+            id = libs.plugins.project.android.library.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.AndroidLibraryConventionPlugin"
+        }
+
+        register("hilt"){
+            id = libs.plugins.project.hilt.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.HiltConventionPlugin"
+        }
     }
 }
