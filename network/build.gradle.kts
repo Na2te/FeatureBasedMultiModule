@@ -8,7 +8,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace = "com.na2te.network"
+    namespace = "com.na2te.data"
 }
 
 dependencies {
