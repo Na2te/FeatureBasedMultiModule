@@ -1,5 +1,6 @@
 package com.na2te.network.di
 
+import com.na2te.data.BuildConfig
 import com.na2te.network.api.TestApi
 import dagger.Module
 import dagger.Provides

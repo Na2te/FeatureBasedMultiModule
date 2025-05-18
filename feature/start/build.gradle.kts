@@ -8,5 +8,6 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.domain)
     api(libs.androidx.material3)
 }

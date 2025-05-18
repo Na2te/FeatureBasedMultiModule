@@ -17,7 +17,10 @@ import com.na2te.second.navigation.secondSection
 import com.na2te.start.navigation.StartBaseRoute
 import com.na2te.start.navigation.navigateToStart
 import com.na2te.start.navigation.startSection
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

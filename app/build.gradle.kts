@@ -3,13 +3,16 @@ plugins {
     // 물론 project.android.application이라는 커스텀 플러그인 관련 buil-logic 내의 관련 동작에는 android.application을 추가하는 작업이 되어 있음
     alias(libs.plugins.project.android.application)
     alias(libs.plugins.project.android.compose)
+    alias(libs.plugins.project.hilt)
+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.hangeulmansae.featurebasedmultimodule"
+    namespace = "com.na2te.featurebasedmultimodule"
 
     defaultConfig {
-        applicationId = "com.hangeulmansae.featurebasedmultimodule"
+        applicationId = "com.na2te.featurebasedmultimodule"
 
         versionCode = 1
         versionName = "1.0"
@@ -31,6 +34,8 @@ android {
 dependencies {
     implementation(projects.feature.start)
     implementation(projects.feature.second)
+    implementation(projects.core.domain)
+    implementation(projects.data)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -38,6 +43,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.kotlinx.serialization.json)
+
+    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
