@@ -75,5 +75,10 @@ gradlePlugin {
             implementationClass = "com.na2te.convention.plugins.HiltConventionPlugin"
         }
 
+        register("library"){
+            id = libs.plugins.project.jvm.library.get().pluginId
+            implementationClass = "com.na2te.convention.plugins.JvmLibraryConventionPlugin"
+        }
+
     }
 }

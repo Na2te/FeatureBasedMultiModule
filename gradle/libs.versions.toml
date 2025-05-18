@@ -82,4 +82,5 @@ project-android-compose = { id = "project.android.compose" }
 project-android-feature = { id = "project.android.feature" }
 project-android-library = { id = "project.android.library" }
 project-android-library-compose = { id = "project.android.library.compose" }
+project-jvm-library = { id = "project.jvm.library" }
 project-hilt = { id = "project.hilt" }
