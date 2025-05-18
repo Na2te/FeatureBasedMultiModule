@@ -9,4 +9,5 @@ android {
 
 dependencies {
     api(projects.network)
+    implementation(projects.core.domain)
 }
