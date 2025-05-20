@@ -7,13 +7,18 @@ import androidx.navigation.compose.navigation
 import com.na2te.start.Greeting
 import kotlinx.serialization.Serializable
 
-@Serializable data object StartRoute
-@Serializable data object StartBaseRoute
+@Serializable
+data object StartRoute
+@Serializable
+data object StartBaseRoute
 
-fun NavGraphBuilder.startSection(onNavigationClick: () -> Unit) {
+fun NavGraphBuilder.startSection(
+    onNavigationClick: () -> Unit,
+    onShowSnackBar: suspend (message: String, action: String?) -> Boolean
+) {
     navigation<StartBaseRoute>(startDestination = StartRoute) {
         composable<StartRoute> {
-            Greeting("Na2te", onClick = onNavigationClick)
+            Greeting("Na2te", onClick = onNavigationClick, onShowSnackBar = onShowSnackBar)
 
 
         }
