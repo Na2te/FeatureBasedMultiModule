@@ -35,6 +35,7 @@ dependencies {
     implementation(projects.feature.start)
     implementation(projects.feature.second)
     implementation(projects.core.domain)
+    implementation(projects.core.designsystem)
     implementation(projects.data)
 
     implementation(libs.androidx.core.ktx)

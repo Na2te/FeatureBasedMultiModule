@@ -12,7 +12,14 @@ data class ProjectColors(
 )
 
 val LightColorScheme = ProjectColors(
-    primaryText = Color(0xFF82ACCF),
+    primaryText = Color(0xFF000000),
+    secondaryText = Color(0xFFB5E7E5),
+    background = Color(0xFFA5F7CB),
+    chartLegend = Color(0xFFD2FC90)
+)
+
+val DarkColorScheme = ProjectColors(
+    primaryText = Color(0xFFFFFFFF),
     secondaryText = Color(0xFFB5E7E5),
     background = Color(0xFFA5F7CB),
     chartLegend = Color(0xFFD2FC90)

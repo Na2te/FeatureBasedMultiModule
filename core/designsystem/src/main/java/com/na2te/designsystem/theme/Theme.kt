@@ -14,7 +14,7 @@ fun ProjectTheme(
     content: @Composable () -> Unit,
 ) {
     // Color scheme
-    val colorScheme = if (darkTheme) LightColorScheme else LightColorScheme
+    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
 
     // Composition locals
     CompositionLocalProvider (
@@ -22,7 +22,7 @@ fun ProjectTheme(
     ) {
         MaterialTheme(
             colorScheme = materialColorScheme,
-            typography = ProjectTypography,
+            typography = MaterialTypography,
             content = content,
         )
     }
@@ -33,6 +33,11 @@ object ProjectTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalColorScheme.current
+
+    val typography: ProjectTypography
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalTypography
 }
 
 /**
